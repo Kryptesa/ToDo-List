@@ -1,6 +1,7 @@
 # ToDo List (quasar_todo)
 
 A Quasar Framework app
+[Deployed app](https://spa.kryptesa.now.sh/#/)
 
 ## Install the dependencies
 ```bash
