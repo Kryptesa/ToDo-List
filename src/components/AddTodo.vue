@@ -25,6 +25,11 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style >
+.q-form {
+  margin-bottom: 0.5em;
+}
+.q-input {
+  min-width: 110px;
+}
 </style>

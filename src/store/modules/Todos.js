@@ -21,6 +21,16 @@ const actions = {
 
     commit('newTodo', response.data);
   },
+  async deleteTodo({ commit }, id) {
+    await Axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
+
+    commit('deleteTodo', id);
+  },
+  async updateTodo({ commit }, updTodo) {
+    await Axios.put(`https://jsonplaceholder.typicode.com/todos/${updTodo.id}`, updTodo);
+
+    commit('updateTodo', updTodo);
+  },
 };
 
 const mutations = {
@@ -29,6 +39,16 @@ const mutations = {
   },
   newTodo(state, todo) {
     state.todos.unshift(todo);
+  },
+  deleteTodo(state, id) {
+    state.todos = state.todos.filter(todo => todo.id !== id);
+  },
+  updateTodo(state, updTodo) {
+    const index = state.todos.findIndex(todo => todo.id === updTodo.id);
+
+    if (index !== -1) {
+      state.todos.splice(index, 1, updTodo);
+    }
   },
 };
 

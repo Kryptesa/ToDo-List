@@ -10,11 +10,13 @@
           </q-toolbar-title>
         </q-toolbar>
       </q-header>
-    <q-page-container>
-        <q-page class="q-pa-md">
+    <q-page-container class="row">
+      <div class="col-3" />
+        <q-page class="q-pa-md col-6" >
           <AddTodo />
           <Todos />
         </q-page>
+      <div class="col-3" />
     </q-page-container>
   </q-layout>
 </template>
